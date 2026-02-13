@@ -1,0 +1,23 @@
+Security Scan Report for https://cloud.mimosa.co/app/welcome.html#/login?return_to=&providerId=device-unlock8
+Risk Score: 22 (MEDIUM RISK)
+
+Verdict:
+ -> NO DB BACKUPS FOUND
+
+Findings:
+[HIGH] Missing Header: Strict-Transport-Security
+   Impact: Security weakness.
+   Fix: Enable Strict-Transport-Security.
+--------------------
+[LOW] Missing Header: X-Content-Type-Options
+   Impact: Security weakness.
+   Fix: Enable X-Content-Type-Options.
+--------------------
+[MEDIUM] Missing Header: Content-Security-Policy
+   Impact: Security weakness.
+   Fix: Enable Content-Security-Policy.
+--------------------
+[LOW] No Strict Rate Limiting
+   Impact: Susceptible to Brute-force.
+   Fix: Implement rate limiting.
+--------------------

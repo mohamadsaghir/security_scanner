@@ -1,0 +1,107 @@
+{
+    "target": "http://localhost:3000/login",
+    "risk_score": 64,
+    "baseline_status": "Compared (New: 0, Persistent: 7)",
+    "executive_summary": "The security scan of http://localhost:3000/login has completed with a total Risk Score of 64. The posture is CRITICAL. 1 critical vulnerabilities were identified that require immediate remediation. The target is highly susceptible to compromise, including Data Breach and System Takeover. ",
+    "recommendations": [
+        "- [LOW] Disable Header.",
+        "- [MEDIUM] Enable Content-Security-Policy.",
+        "- [LOW] Implement throttling.",
+        "- [CRITICAL] Restrict .env.",
+        "- [HIGH] Restrict .git/HEAD.",
+        "- [LOW] Restrict admin/.",
+        "- [LOW] Restrict login/."
+    ],
+    "attack_surface": {
+        "endpoints": [
+            "http://localhost:3000/.env",
+            "http://localhost:3000/.git/HEAD",
+            "http://localhost:3000/admin/",
+            "http://localhost:3000/login/",
+            "http://localhost:3000/robots.txt"
+        ],
+        "parameters": []
+    },
+    "verdict": [
+        "HIGH: ADMIN EXPOSED WITH NO RATE LIMIT"
+    ],
+    "findings": [
+        {
+            "title": "Tech Stack Disclosure",
+            "risk": "LOW",
+            "impact": "Information Leakage.",
+            "fix": "Disable Header.",
+            "description": "",
+            "status": "PERSISTENT",
+            "confidence": "CONFIRMED",
+            "cve": null,
+            "remote": false
+        },
+        {
+            "title": "Missing Header: Content-Security-Policy",
+            "risk": "MEDIUM",
+            "impact": "Missing defense-in-depth control.",
+            "fix": "Enable Content-Security-Policy.",
+            "description": "",
+            "status": "PERSISTENT",
+            "confidence": "POTENTIAL",
+            "cve": null,
+            "remote": false
+        },
+        {
+            "title": "No Strict Rate Limiting",
+            "risk": "LOW",
+            "impact": "Brute-force risk.",
+            "fix": "Implement throttling.",
+            "description": "",
+            "status": "PERSISTENT",
+            "confidence": "POTENTIAL",
+            "cve": null,
+            "remote": false
+        },
+        {
+            "title": "Exposed .env",
+            "risk": "CRITICAL",
+            "impact": "Exposed Config.",
+            "fix": "Restrict .env.",
+            "description": "",
+            "status": "PERSISTENT",
+            "confidence": "CONFIRMED",
+            "cve": null,
+            "remote": false
+        },
+        {
+            "title": "Exposed Git",
+            "risk": "HIGH",
+            "impact": "Exposed VCS.",
+            "fix": "Restrict .git/HEAD.",
+            "description": "",
+            "status": "PERSISTENT",
+            "confidence": "CONFIRMED",
+            "cve": null,
+            "remote": false
+        },
+        {
+            "title": "Admin Panel",
+            "risk": "LOW",
+            "impact": "Exposed Admin.",
+            "fix": "Restrict admin/.",
+            "description": "",
+            "status": "PERSISTENT",
+            "confidence": "CONFIRMED",
+            "cve": null,
+            "remote": false
+        },
+        {
+            "title": "Login Page",
+            "risk": "LOW",
+            "impact": "Exposed Admin.",
+            "fix": "Restrict login/.",
+            "description": "",
+            "status": "PERSISTENT",
+            "confidence": "CONFIRMED",
+            "cve": null,
+            "remote": false
+        }
+    ]
+}
